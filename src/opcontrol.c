@@ -52,14 +52,6 @@
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 void operatorControl() {
-	int FL = 2;				//setting motor ports: Front Left, Back Left, etc......
-	int BL = 3;				//plug in all motors positive to positive
-	int FR = 4;
-	int BR = 5;
-	int intake1 = 6;
-	int intake2 = 7;
-	int fWheel1 = 8;
-	int fWheel2 = 9;
 	while (1) {
 		int leftStick = joystickGetAnalog(1, 3);
 		int rightStick = joystickGetAnalog(1, 2);
@@ -67,27 +59,21 @@ void operatorControl() {
 		motorSet(BL, -leftStick);
 		motorSet(FR, rightStick);
 		motorSet(BR, rightStick);
-		if(joystickGetDigital(1, 5, JOY_UP) == true){
-			motorSet(fWheel1, 125);
-			motorSet(fWheel2, 125);
+		if(joystickGetDigital(1, 6, JOY_UP) == true){		//fire catapult
+			digitalWrite(catapult, HIGH);
 		}
-		else if(joystickGetDigital(1, 5, JOY_UP) == false){
-			motorStop(fWheel1);
-			motorStop(fWheel2);
-		}
-		if(joystickGetDigital(1, 6, JOY_UP) == true){	//spin intake foreward
+		if(joystickGetDigital(1, 5, JOY_UP) == true){	//spin intake foreward
 			motorSet(intake1, 100);
 			motorSet(intake2, 100);
 		}
-		if(joystickGetDigital(1, 6, JOY_DOWN) == true){	//spin inatke backwards
+		if(joystickGetDigital(1, 5, JOY_DOWN) == true){	//spin inatke backwards
 			motorSet(intake1, -100);
 			motorSet(intake2, -100);
 		}
-		else {
+		else {							//stop all motors, return everything to rest state
 			motorStop(intake1);
 			motorStop(intake2);
-			motorStop(fWheel1);
-			motorStop(fWheel2);
+			digitalWrite(catapult, LOW);
 		}
 
 		delay(20);

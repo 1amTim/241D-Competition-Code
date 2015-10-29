@@ -55,6 +55,17 @@ extern "C" {
 
 // Prototypes for initialization, operator control and autonomous
 
+
+ // setting variables for sensors, motors, etc....
+
+    int FL = 2;				//setting motor ports: Front Left, Back Left, etc......
+	int BL = 3;				//plug in all motors positive to positive
+	int FR = 4;
+	int BR = 5;
+	int intake1 = 6;
+	int intake2 = 7;
+	int catapult = 1;
+
 /**
  * Runs the user autonomous code. This function will be started in its own task with the default
  * priority and stack size whenever the robot is enabled via the Field Management System or the
