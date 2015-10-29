@@ -65,8 +65,7 @@ void operatorControl() {
 		if(joystickGetDigital(1, 5, JOY_UP) == true){	//spin intake foreward
 			motorSet(intake1, 100);
 			motorSet(intake2, 100);
-		}
-		if(joystickGetDigital(1, 5, JOY_DOWN) == true){	//spin inatke backwards
+		} else if(joystickGetDigital(1, 5, JOY_DOWN) == true){	//spin inatke backwards
 			motorSet(intake1, -100);
 			motorSet(intake2, -100);
 		}
@@ -76,7 +75,7 @@ void operatorControl() {
 			digitalWrite(catapult, LOW);
 		}
 
-		delay(20);
+		delay(10);
 
 	}
 }
