@@ -62,10 +62,10 @@ void operatorControl() {
 		if(joystickGetDigital(1, 6, JOY_UP) == true){		//fire catapult
 			digitalWrite(catapult, HIGH);
 		}
-		if(joystickGetDigital(1, 5, JOY_UP) == true){	//spin intake foreward
+		if(joystickGetDigital(1, 5, JOY_DOWN) == true){	//spin intake foreward
 			motorSet(intake1, 100);
 			motorSet(intake2, 100);
-		} else if(joystickGetDigital(1, 5, JOY_DOWN) == true){	//spin inatke backwards
+		} else if(joystickGetDigital(1, 5, JOY_UP) == true){	//spin inatke backwards
 			motorSet(intake1, -100);
 			motorSet(intake2, -100);
 		}
