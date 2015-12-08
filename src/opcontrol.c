@@ -57,8 +57,8 @@ void operatorControl() {
 
 	while (1) {
 		//DEF STUFF
-		int rightDrive=joystickGetAnalog(1, 2);
-		int leftDrive=joystickGetAnalog(1, 3);
+		int rightDrive=joystickGetAnalog(1, 2) * dx;
+		int leftDrive=joystickGetAnalog(1, 3) * dx;
 		//MOTOR CONTROL
 		motorSet(lf, -leftDrive);
 		motorSet(rf, rightDrive);
@@ -77,7 +77,7 @@ void operatorControl() {
 		}
 
 		//LAUNCHER CONTROL
-		if (joystickGetDigital(1, 6, JOY_DOWN)){ //launcher
+		if (joystickGetDigital(1, 6, JOY_DOWN)){
 			startLaunchMotors();
 		}
 		else {							//STOP LAUNCH MOTORS

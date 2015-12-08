@@ -71,17 +71,21 @@ extern "C" {
  */
 
 //Motor and sensor ports
-#define lf 5
+#define lf 5	//Drive Motors
 #define rf 4
 #define rb 2
 #define lb 3
-#define intake1 7
+#define intake1 7	//Intake Morors
 #define intake2 6
-#define l1 8
+#define l1 8	//Launcher Motors
 #define l2 9
 
-#define loadSwitch 1
-#define launchSwitch 2
+#define loadSwitch 1	//Pressed while ball is in launcher
+#define launchSwitch 2	//Pressed while launcher is cocked
+
+//Other Constants
+
+#define dx .9 //drive multiplier
 
 void autonomous();
 /**

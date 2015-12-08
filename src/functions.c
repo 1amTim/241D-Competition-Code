@@ -31,17 +31,19 @@ void stopLaunchMotors(){
 	motorSet(l2, 0);
 }
 
-//starts intake in given direction
+//intake balls + load launcher
 void startIntakeMotors(){
 	motorSet(intake1, -100);
 	motorSet(intake2, 100);
 }
 
+//reverses intake
 void reverseIntakeMotors(){
 	motorSet(intake1, 100);
 	motorSet(intake2, -100);
 }
 
+//stop intake motors
 void stopIntakeMotors(){
 	motorSet(intake1, 0);
 	motorSet(intake2, 0);
