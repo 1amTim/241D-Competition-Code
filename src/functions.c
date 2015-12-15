@@ -1,4 +1,6 @@
 /** @file functions.c
+ *  @breif API functions created by us specifically for our robot
+ *
  *
  *  Created on: Dec 8, 2015
  *      Author: tim
@@ -9,47 +11,63 @@
 #include <API.h>
 
 
-//Checks if nautilus is loaded with a ball
+/**Checks if nautilus is loaded with a ball
+ *
+ **/
 int isLoaded(){
 	return !digitalRead(loadSwitch);
 }
 
-//checks if nautilus is cocked
+/**checks if nautilus is cocked
+ *
+ */
 int isCocked(){
 	return !digitalRead(launchSwitch);
 }
 
-//runs launcher motors at normal speed
+/**runs launcher motors at normal speed
+ *
+ */
 void startLaunchMotors(){
 	motorSet(l1, -110);
 	motorSet(l2, -110);
 }
 
-//stops launcher motors
+/**stops launcher motors
+ *
+ */
 void stopLaunchMotors(){
 	motorSet(l1, 0);
 	motorSet(l2, 0);
 }
 
-//intake balls + load launcher
+/**intake balls + load launcher
+ *
+ **/
 void startIntakeMotors(){
 	motorSet(intake1, -100);
 	motorSet(intake2, 100);
 }
 
-//reverses intake
+/**reverses intake
+ *
+ **/
 void reverseIntakeMotors(){
 	motorSet(intake1, 100);
 	motorSet(intake2, -100);
 }
 
-//stop intake motors
+/**stop intake motors
+ *
+ **/
 void stopIntakeMotors(){
 	motorSet(intake1, 0);
 	motorSet(intake2, 0);
 }
 
-//loads ball into nautilus from intake
+/**loads ball into nautilus from intake
+ *
+ **/
 void loadNautilus(){
 	startIntakeMotors(1);
 	while(!isLoaded()){
@@ -58,7 +76,9 @@ void loadNautilus(){
 	stopIntakeMotors();
 }
 
-//Cocks the nautilus but does not fire
+/**Cocks the nautilus but does not fire
+ *
+ **/
 void cockNautilus(){
 	startLaunchMotors();
 	while(!isCocked()){ //pull back
@@ -66,7 +86,9 @@ void cockNautilus(){
 	}
 	stopLaunchMotors();
 }
-
+/** Fires the launcher
+ *
+ **/
 void fireNautilus(){
 	startLaunchMotors();
 	while(isCocked()){ //fire!
