@@ -33,7 +33,6 @@
  */
 
 #include "main.h"
-#include "functions.c"
 
 /*
  * Runs the user operator control code. This function will be started in its own task with the
@@ -56,6 +55,7 @@
 void operatorControl() {
 
 	while (1) {
+		//telemDisp();
 		//DEF STUFF
 		int rightDrive=joystickGetAnalog(1, 2) * dx;
 		int leftDrive=joystickGetAnalog(1, 3) * dx;

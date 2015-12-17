@@ -87,6 +87,22 @@ extern "C" {
 
 #define dx .9 //drive multiplier
 
+//lcd
+#define lcdPort uart1;
+
+int isLoaded();
+int isCocked();
+void startLaunchMotors();
+void stopLaunchMotors();
+void startIntakeMotors();
+void reverseIntakeMotors();
+void stopIntakeMotors();
+void loadNautilus();
+void cockNautilus();
+void fireNautilus();
+void telemDisp();
+
+
 void autonomous();
 /**
  * Runs pre-initialization code. This function will be started in kernel mode one time while the
@@ -130,9 +146,9 @@ void initialize();
  */
 void operatorControl();
 
+
 // End C++ export structure
 #ifdef __cplusplus
 }
 #endif
-
 #endif

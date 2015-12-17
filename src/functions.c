@@ -1,15 +1,11 @@
-/** @file functions.c
- *  @breif API functions created by us specifically for our robot
+/*
+ * functions.c
  *
- *
- *  Created on: Dec 8, 2015
+ *  Created on: Dec 17, 2015
  *      Author: tim
  */
-//functions to be used in opcontrol.c and auto.c
 
 #include "main.h"
-#include <API.h>
-
 
 /**Checks if nautilus is loaded with a ball
  *
@@ -97,6 +93,12 @@ void fireNautilus(){
 	stopLaunchMotors();
 }
 
+/** Telemetry Display
+ *  	Displays Battery voltage, shots fired
+ **/
+void telemDisp(){
+	lcdPrint(uart1, 1, "hi");
 
+}
 
 
