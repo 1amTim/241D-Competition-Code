@@ -55,7 +55,7 @@
 void operatorControl() {
 
 	while (1) {
-		//telemDisp();
+		telemDisp();
 		//DEF STUFF
 		int rightDrive=joystickGetAnalog(1, 2) * dx;
 		int leftDrive=joystickGetAnalog(1, 3) * dx;
