@@ -1,9 +1,9 @@
-/*
+/** Functions to be used in opcontrol and auto
  * functions.c
  *
  *  Created on: Dec 17, 2015
  *      Author: tim
- */
+ **/
 
 #include "main.h"
 
@@ -93,11 +93,23 @@ void fireNautilus(){
 	stopLaunchMotors();
 }
 
+/**Gets main battery charge percentage
+ * uses batMin and batMax (Defined in main.h)
+ * returns percentage of usable battery charge
+ **/
+int getBatPercent(){
+	//int x = batMax - batMin;
+	//int y = powerLevelMain() / x;
+	return powerLevelMain();
+}
+
 /** Telemetry Display
  *  	Displays Battery voltage, shots fired
  **/
 void telemDisp(){
-	lcdPrint(uart1, 1, "hi");
+
+	lcdClear(uart1);
+	lcdPrint(uart1, 1, "Bat: %u", getBatPercent()); //max 9 characters
 
 }
 

@@ -64,5 +64,6 @@ void initializeIO() {
  */
 void initialize() {
 	lcdInit(uart1);
+	lcdClear(uart1);
 	lcdPrint(uart1, 1, "Hello 241D!");
 }

@@ -87,8 +87,11 @@ extern "C" {
 
 #define dx .9 //drive multiplier
 
-//lcd
-#define lcdPort uart1;
+#define batMax 7200
+#define batMin 0
+
+#define maxShots 100
+
 
 int isLoaded();
 int isCocked();
@@ -100,6 +103,7 @@ void stopIntakeMotors();
 void loadNautilus();
 void cockNautilus();
 void fireNautilus();
+int getBatPercent();
 void telemDisp();
 
 
