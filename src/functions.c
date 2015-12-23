@@ -1,5 +1,6 @@
-/** Functions to be used in opcontrol and auto
- * functions.c
+/** @file functions.c
+ * @brief General functions to be used in the rest of the code
+ *
  *
  *  Created on: Dec 17, 2015
  *      Author: tim
