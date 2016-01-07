@@ -75,8 +75,8 @@ extern "C" {
 #define rf 4
 #define rb 2
 #define lb 3
-#define intake1 7	//Intake Morors
-#define intake2 6
+#define inL 7	//Intake Morors
+#define inR 6
 #define l1 8	//Launcher Motors
 #define l2 9
 
@@ -87,11 +87,10 @@ extern "C" {
 
 #define dx .9 //drive multiplier
 
-#define batMax 7200
-#define batMin 0
+//motor speed constants
 
-#define maxShots 100
-
+#define launcherSpeed 110
+#define intakeSpeed 100
 
 int isLoaded();
 int isCocked();
@@ -103,8 +102,6 @@ void stopIntakeMotors();
 void loadNautilus();
 void cockNautilus();
 void fireNautilus();
-int getBatPercent();
-void telemDisp();
 
 
 void autonomous();

@@ -26,8 +26,8 @@ int isCocked(){
  *
  */
 void startLaunchMotors(){
-	motorSet(l1, -110);
-	motorSet(l2, -110);
+	motorSet(l1, -launcherSpeed);
+	motorSet(l2, -launcherSpeed);
 }
 
 /**stops launcher motors
@@ -42,24 +42,24 @@ void stopLaunchMotors(){
  *
  **/
 void startIntakeMotors(){
-	motorSet(intake1, -100);
-	motorSet(intake2, 100);
+	motorSet(inL, -intakeSpeed);
+	motorSet(inR, intakeSpeed);
 }
 
 /**reverses intake
  *
  **/
 void reverseIntakeMotors(){
-	motorSet(intake1, 100);
-	motorSet(intake2, -100);
+	motorSet(inL, intakeSpeed);
+	motorSet(inR, -intakeSpeed);
 }
 
 /**stop intake motors
  *
  **/
 void stopIntakeMotors(){
-	motorSet(intake1, 0);
-	motorSet(intake2, 0);
+	motorSet(inL, 0);
+	motorSet(inR, 0);
 }
 
 /**loads ball into nautilus from intake
@@ -94,24 +94,5 @@ void fireNautilus(){
 	stopLaunchMotors();
 }
 
-/**Gets main battery charge percentage
- * uses batMin and batMax (Defined in main.h)
- * returns percentage of usable battery charge
- **/
-int getBatPercent(){
-	//int x = batMax - batMin;
-	//int y = powerLevelMain() / x;
-	return powerLevelMain();
-}
-
-/** Telemetry Display
- *  	Displays Battery voltage, shots fired
- **/
-void telemDisp(){
-
-	lcdClear(uart1);
-	lcdPrint(uart1, 1, "Bat: %u", getBatPercent()); //max 9 characters
-
-}
 
 
