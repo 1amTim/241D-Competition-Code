@@ -65,10 +65,10 @@ void operatorControl() {
 		motorSet(rb, rightDrive);
 
 		//INTAKE CONTROL
-		if(joystickGetDigital(1, 5, JOY_DOWN)){	//spin intake foreward
+		if(joystickGetDigital(1, 5, JOY_UP)){	//spin intake foreward
 			startIntakeMotors();
 		}
-		else if(joystickGetDigital(1, 5, JOY_UP)){	//spin inatke backwards
+		else if(joystickGetDigital(1, 5, JOY_DOWN)){	//spin inatke backwards
 			reverseIntakeMotors();
 		}
 		else{//STOP INTAKE
